@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Merry Christmas ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f6b7c1;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+}
+
+section {
+    display: none;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+section.active { display: flex; }
+
+button {
+    padding: 15px 35px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    background: #fff;
+    color: #f38aa3;
+    margin-top: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 90px);
+    gap: 12px;
+}
+
+.cell {
+    width: 90px;
+    height: 90px;
+    background: #fff;
+    color: #f38aa3;
+    font-size: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 18px;
+}
+
+.cell.win { background: #ffd1dc; }
+
+.message-box {
+    background: white;
+    color: #f38aa3;
+    padding: 30px;
+    border-radius: 25px;
+    max-width: 520px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.hug-gif {
+    width: 260px;
+    border-radius: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎵 LOCAL MP3 -->
+<audio id="music">
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<section id="start" class="active">
+    <h1>🎄 Merry Christmas 🎄</h1>
+    <button onclick="goTo('game')">Start</button>
+</section>
+
+<section id="game">
+    <h1>Tic Tac Toe 😄</h1>
+    <div class="grid" id="board"></div>
+</section>
+
+<section id="envelope">
+    <h1>You Won 💕</h1>
+    <button onclick="goTo('message')">Open Envelope ✉️</button>
+    <button onclick="toggleMusic()" id="music-btn">Play Music 🎵</button>
+</section>
+
+<section id="message">
+    <div class="message-box">
+        Merry merry merry Christmas 🎄🎁 to my cute, kind and amazing woman ❤️  
+        Brave, strong and soft at heart 🥹  
+
+        I’m so glad to have you in my life.  
+        I’m always here for you.  
+        You’re getting better every day and I’m proud of you 🤍  
+
+        I don’t want any gift because I already have the best one — **you** 🎁  
+
+        Take care and stay safeee 🫂
+        <br><br>
+        <button onclick="goTo('final')">Continue</button>
+    </div>
+</section>
+
+<section id="final">
+    <h1>YOU ARE THE BEST ❤️</h1>
+    <button onclick="goTo('hug')">Hug 🤍</button>
+</section>
+
+<section id="hug">
+    <h1>Sending you a warm hug 🫂</h1>
+    <img class="hug-gif" src="https://media.giphy.com/media/UhtyeG7rUP5Ifs5KpS/giphy.gif">
+</section>
+
+<script>
+const board = document.ge
